@@ -7,18 +7,15 @@
     <title>SkySwipe</title>
     <link rel="stylsheet" href="./normalize.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@0.7.4/dist/tailwind.min.css"
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
     <link rel="stylsheet" href="./main.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
-  <nav>
-    <button>hamburger button</button>
-    <h1>SkySwipe</h1>
-  </nav>
   <body>
     <div class="background">
+      <script src="./app.js"></script>
       <div class="row justify-content-center">
         Outbound City:<input type="text" id="fromLoc" name="from" value="" />
         Outbound Date:<input
@@ -34,6 +31,6 @@
       </div>
       <div id="flight-info"></div>
     </div>
+    <div></div>
   </body>
-  <script src="./app.js"></script>
 </html>
