@@ -1,3 +1,20 @@
-.background {
-  background-color: blueviolet;
+.body {
+  background-color: #56b0de;
+  color: white;
+  font-family: "Sintony", sans-serif;
+  text-align: center;
+}
+
+.button {
+  padding: 12px;
+}
+
+.headline {
+  font-family: "Sacramento", cursive;
+  font-size: 48px;
+  text-align: left;
+}
+
+.inputtext {
+  color: #06344c;
 }
