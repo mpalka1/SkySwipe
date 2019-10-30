@@ -9,12 +9,32 @@
   padding: 12px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .headline {
   font-family: "Sacramento", cursive;
-  font-size: 48px;
+  font-size: 64px;
   text-align: left;
 }
 
 .inputtext {
   color: #06344c;
+}
+
+.question {
+  font-size: 24px;
+}
+
+#section1 {
+  height: 200px;
+}
+
+#section2 {
+  height: 200px;
+}
+
+#section3 {
+  height: 200px;
 }
