@@ -126,17 +126,19 @@ $(document).ready(function() {
   }
   $("#text_value").on("click", function(event) {
     event.preventDefault();
-    var fromLoc = $("#fromLoc").val();
-    var toLoc = $("#toLoc").val();
-    var outBound = $("#outBound").val();
-    var inBound = $("#inBound").val();
+    var fromLoc = "CHIA-sky";
+    // $("#fromLoc").val();
+    var toLoc = "CUZ-sky";
+    // $("#toLoc").val();
+    var outBound = "2019-11-01";
+    // $("#outBound").val();
+    var inBound = "2019-12-01";
+    // $("#inBound").val();
     if (fromLoc == "" || toLoc == "" || outBound == "" || inBound == "") {
       alert("Please Answer All Inputs");
     } else {
       createSession(outBound, inBound, toLoc, fromLoc);
-      for (var i = 0; i < arrKeys.length; i++) {
-        pullFlightData(arrKeys[i]);
-      }
+      pullFlightData(arrKeys);
     }
   });
 });

@@ -24,7 +24,17 @@
       <div class="row justify-content-center">
         <div id="section1">
           <div class="question">Where do you want to go?</div>
-          <p>Departure City:<input type="text" id="fromLoc" name="from" value="" class="inputtext"/> Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button">Fly, you fools!<button></a></p>
+          <p>Departure City:
+            <div class="custom-select">
+                <select>
+                  <option class="value0" value="0">Pick a Continent:</option>
+                  <option value="1">Africa</option>
+                  <option value="2">Asia</option>
+                  <option value="3">Europe</option>
+                  <option value="4">North America</option>
+                  <option value="5">South America</option>
+                </select>
+              </div>Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button">Fly, you fools!<button></a></p>
             </div>
             
         <div id="section2">
@@ -35,13 +45,17 @@
 
 
         <div id="section3">
-        Destination Continent:<input
-          type="text"
-          id="toLoc"
-          name="to"
-          value=""
-          class="inputtext"
-        />
+        Destination Continent:         
+        <div class="custom-select">
+            <select>
+              <option class="value0" value="0">Pick a Continent:</option>
+              <option value="1">Africa</option>
+              <option value="2">Asia</option>
+              <option value="3">Europe</option>
+              <option value="4">North America</option>
+              <option value="5">South America</option>
+            </select>
+          </div>
         Return Date:<input
           type="text"
           id="inBound"

@@ -9,6 +9,12 @@
   padding: 12px;
 }
 
+.custom-select {
+  position: relative;
+  font-family: "Sintony", sans-serif;
+  color: #56b0de;
+}
+
 html {
   scroll-behavior: smooth;
 }
