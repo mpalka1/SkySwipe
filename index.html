@@ -12,6 +12,7 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./main.css" />
+
   </head>
   <nav>
     <h1 class="headline">SkySwipe</h1>
@@ -19,27 +20,22 @@
   <body class="body">
     <div>
       <script src="./app.js"></script>
+      
       <div class="row justify-content-center">
-        <div>Where do you want to go?</div>
-        Departure City:<input
-          type="text"
-          id="fromLoc"
-          name="from"
-          value=""
-          class="inputtext"
-        />
-        Departure Date:<input
-          type="text"
-          id="outBound"
-          name="fromDate"
-          value=""
-          class="inputtext"
-        />
-        <div>Coming back?</div>
-        <div>
-          <button class="button">Yes</button><button class="button">No</button>
+        <div id="section1">
+          <div class="question">Where do you want to go?</div>
+          <p>Departure City:<input type="text" id="fromLoc" name="from" value="" class="inputtext"/> Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button">Fly, you fools!<button></a></p>
+            </div>
+            
+        <div id="section2">
+          <div class="question">Coming back?</div>
+          <p>
+            <button class="button"><a href="#section3">Yes</a></button><button class="button"><a href="#section3">No</button></a></p>
         </div>
-        Destination City:<input
+
+
+        <div id="section3">
+        Destination Continent:<input
           type="text"
           id="toLoc"
           name="to"
@@ -65,10 +61,10 @@
           value=" Reset "
           class="inputtext"
         />
+        </div>
       </div>
       <div id="flight-info"></div>
     </div>
-    <div></div>
     <link
       href="https://fonts.googleapis.com/css?family=Sacramento|Sintony&display=swap"
       rel="stylesheet"
