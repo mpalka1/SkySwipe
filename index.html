@@ -46,19 +46,12 @@
 
 
         <div id="section3">
-        Destination Continent:
-        <div class="custom-select">
-            <select>
-              <option class="value0" value="0">Pick a Continent:</option>
-              <option value="1">Africa</option>
-              <option value="2">Asia</option>
-              <option value="3">Europe</option>
-              <option value="4">North America</option>
-              <option value="5">South America</option>
-            </select>
-        Return Date:
-        <label for="flightdate">Date</label>
-        <input type="date" name="dateofbirth" id="dateofbirth">
+        Return Date:<input
+          type="text"
+          id="inBound"
+          name="toDate"
+          value=""
+          class="inputtext"
         />
         <input
           type="button"
@@ -74,7 +67,21 @@
         />
         </div>
       </div>
-      <div id="flight-info"></div>
+      <!-- include style="display: none" in div to remove container when all inputs are not complete -->
+      <div id="flightInfo" class="container">
+        <div id="myProgress" style="display: none">
+          <div id="myBar"></div>
+        </div>
+        <div id="fltOps" style="display: none">
+          <!-- Country -->
+          <div id="country">COUNTRY</div>
+          <!-- Flight/Prices -->
+          <div id="flightoptions">OPTIONS</div>
+          <!-- next question -->
+          <button id="likeBtn">Like</button>
+          <button id="dislikeBtn">Dislike</button>
+        </div>
+      </div>
     </div>
     <link
       href="https://fonts.googleapis.com/css?family=Sacramento|Sintony&display=swap"
