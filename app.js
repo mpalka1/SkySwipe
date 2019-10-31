@@ -3,14 +3,14 @@ const newLocal =
 var arrAfri = [
   "NBA-sky",
   "DPT-sky",
-  "CAI-sky",
-  "LOS-sky",
-  "CMN-sky",
-  "DUR-sky",
-  "ACC-sky",
-  "NBOA-sky",
-  "DKRA-sky",
-  "EBB-sky"
+  "CAI-sky"
+  // "LOS-sky",
+  // "CMN-sky",
+  // "DUR-sky",
+  // "ACC-sky",
+  // "NBOA-sky",
+  // "DKRA-sky",
+  // "EBB-sky"
 ];
 var arrAsia = [
   "HKGA-sky",
@@ -81,7 +81,6 @@ $(document).ready(function() {
       },
       data: {
         inboundDate: inbound,
-        cabinClass: "business",
         children: "0",
         infants: "0",
         country: "US",
@@ -98,7 +97,6 @@ $(document).ready(function() {
       var locConcat = locId.substr(locId.length - 36);
       arrKeys.push(locConcat);
       for (var i = 0; i < arrKeys.length; i++) {
-        console.log(arrKeys[i]);
       }
     });
   }
@@ -128,16 +126,39 @@ $(document).ready(function() {
     event.preventDefault();
     var fromLoc = "CHIA-sky";
     // $("#fromLoc").val();
-    var toLoc = "CUZ-sky";
+    var toLoc = "Africa";
     // $("#toLoc").val();
     var outBound = "2019-11-01";
     // $("#outBound").val();
     var inBound = "2019-12-01";
     // $("#inBound").val();
+    
     if (fromLoc == "" || toLoc == "" || outBound == "" || inBound == "") {
       alert("Please Answer All Inputs");
-    } else {
-      createSession(outBound, inBound, toLoc, fromLoc);
+    } else if(toLoc="Africa"){
+      for (var i = 0; i < arrAfri.length; i++){
+        createSession(outBound, inBound, arrAfri[i], fromLoc);
+      }
+      pullFlightData(arrKeys);
+    }else if(toLoc="Asia"){
+        for (var i = 0; i < arrAsia.length; i++){
+          createSession(outBound, inBound, arrAsia[i], fromLoc);
+        }
+        pullFlightData(arrKeys);
+    }else if(toLoc="Europe"){
+      for (var i = 0; i < arrEuro.length; i++){
+        createSession(outBound, inBound, arrEuro[i], fromLoc);
+      }
+      pullFlightData(arrKeys);
+    }else if(toLoc="North America"){
+      for (var i = 0; i < arrNorAm.length; i++){
+        createSession(outBound, inBound, arrNorAm[i], fromLoc);
+      }
+      pullFlightData(arrKeys);
+    }else if(toLoc="South America"){
+      for (var i = 0; i < arrSouAm.length; i++){
+        createSession(outBound, inBound, arrSouAm[i], fromLoc);
+      }
       pullFlightData(arrKeys);
     }
   });
