@@ -17,7 +17,7 @@ var arrKeys = [];
 
 $(document).ready(function() {
   // create unique session ID to pull flight data
-  function createSession(outbound, inbound, tolocation, fromlocation) {
+  function createSession(outbound, inbound, tolocation, fromlocation, index) {
     var settings = {
       async: true,
       crossDomain: true,
@@ -46,7 +46,8 @@ $(document).ready(function() {
     $.ajax(settings).then(function(data, status, xhr) {
       var locId = xhr.getResponseHeader("location");
       var locConcat = locId.substr(locId.length - 36);
-      arrKeys.push(locConcat);
+      pullFlightData(locConcat);
+
     });
   }
 
@@ -67,7 +68,8 @@ $(document).ready(function() {
         }
       };
       $.ajax(settings).done(function(response) {
-        console.log(response);
+        arrKeys.push(response);
+        console.log(arrKeys);
       });
   }
 // creates the html connection for the flights to display
@@ -118,9 +120,8 @@ function move() {
       alert("Please Answer All Inputs");
     } else if(toLoc="Africa"){
       for (var i = 0; i < arrAfri.length; i++){
-        createSession(outBound, inBound, arrAfri[i], fromLoc);
+        createSession(outBound, inBound, arrAfri[i], fromLoc,i);
         move();
-        pullFlightData(arrKeys[i]);
 
       }
     }else if(toLoc="Asia"){
