@@ -66,7 +66,21 @@
         />
         </div>
       </div>
-      <div id="flight-info"></div>
+      <!-- include style="display: none" in div to remove container when all inputs are not complete -->
+      <div id="flightInfo" class="container">
+        <div id="myProgress" style="display: none">
+          <div id="myBar"></div>
+        </div>
+        <div id="fltOps" style="display: none">
+          <!-- Country -->
+          <div id="country">COUNTRY</div>
+          <!-- Flight/Prices -->
+          <div id="flightoptions">OPTIONS</div>
+          <!-- next question -->
+          <button id="likeBtn">Like</button>
+          <button id="dislikeBtn">Dislike</button>
+        </div>
+      </div>
     </div>
     <link
       href="https://fonts.googleapis.com/css?family=Sacramento|Sintony&display=swap"
