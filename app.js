@@ -50,7 +50,6 @@ $(document).ready(function() {
 
     });
   }
-
   // pull flight data object for each ID
   function pullFlightData(str) {
       var settings = {
@@ -105,18 +104,48 @@ function move() {
   }
 }
 
-  $("#text_value").on("click", function(event) {
+function showSecThree(){
+    document.getElementById("section1").style.display="none";
+    document.getElementById("section3").style.display="block";
+}
+function showSecFour(){
+  document.getElementById("section3").style.display="none";
+  document.getElementById("section4").style.display="none";
+}
+
+  $("#section1_btn").on("click", function(event) {
     event.preventDefault();
-    var fromLoc = "CHIA-sky";
-    // $("#fromLoc").val();
-    var toLoc = "Africa";
-    // $("#toLoc").val();
     var outBound = "2019-11-01";
     // $("#outBound").val();
+    var fromLoc = "CHIA-sky";
+    // $("#fromLoc").val();
+    if (fromLoc == "" || outBound == "") {
+      alert("Please Answer All Inputs");
+    } else {
+      showSecThree();
+    }
+  });
+  $("#text_value").on("click", function(event) {
+    event.preventDefault();
+    var toLoc = "Africa";
+    // $("#toLoc").val();
+    var inBound = "2019-12-01";
+    // $("#inBound").val();
+    if (toLoc == "" || outBound == "") {
+      alert("Please Answer All Inputs");
+    } else{
+      showSecFour();
+    }
+  });
+
+  $("#text_value").on("click", function(event) {
+    event.preventDefault();
+    var toLoc = "Africa";
+    // $("#toLoc").val();
     var inBound = "2019-12-01";
     // $("#inBound").val();
     
-    if (fromLoc == "" || toLoc == "" || outBound == "" || inBound == "") {
+    if (toLoc == "" || outBound == "") {
       alert("Please Answer All Inputs");
     } else if(toLoc="Africa"){
       for (var i = 0; i < arrAfri.length; i++){

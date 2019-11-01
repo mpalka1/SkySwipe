@@ -22,7 +22,7 @@
       <script src="./app.js"></script>
       
       <div class="row justify-content-center">
-        <div id="section1">
+        <div id="section1"  style="display: block">
           <div class="question">Where do you want to go?</div>
           <p>Departure City:
             <div class="custom-select">
@@ -34,17 +34,9 @@
                   <option value="4">North America</option>
                   <option value="5">South America</option>
                 </select>
-              </div>Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button">Fly, you fools!<button></a></p>
-            </div>
-            
-        <div id="section2">
-          <div class="question">Coming back?</div>
-          <p>
-            <button class="button"><a href="#section3">Yes</a></button><button class="button"><a href="#section3">No</button></a></p>
+              </div>Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button" id="section1_btn">Fly, you fools!<button></a></p>
         </div>
-
-
-        <div id="section3">
+        <div id="section3" style="display: none">
             Destination Continent:
             <div class="custom-select">
                 <select>
@@ -72,22 +64,25 @@
           class="inputtext"
         />
         </div>
-      </div>
+        </div>
+        <div id="section4" style="display: none">
+          <div id="flightInfo" class="container">
+          <div id="myProgress" style="display: none">
+            <div id="myBar"></div>
+          </div>
+          <div id="fltOps" style="display: none">
+            <!-- Country -->
+            <div id="country">COUNTRY</div>
+            <!-- Flight/Prices -->
+            <div id="flightoptions">OPTIONS</div>
+            <!-- next question -->
+            <button id="likeBtn">Like</button>
+            <button id="dislikeBtn">Dislike</button>
+          </div>
+        </div>
+        </div>
       <!-- include style="display: none" in div to remove container when all inputs are not complete -->
-      <div id="flightInfo" class="container">
-        <div id="myProgress" style="display: none">
-          <div id="myBar"></div>
-        </div>
-        <div id="fltOps" style="display: none">
-          <!-- Country -->
-          <div id="country">COUNTRY</div>
-          <!-- Flight/Prices -->
-          <div id="flightoptions">OPTIONS</div>
-          <!-- next question -->
-          <button id="likeBtn">Like</button>
-          <button id="dislikeBtn">Dislike</button>
-        </div>
-      </div>
+
     </div>
     <link
       href="https://fonts.googleapis.com/css?family=Sacramento|Sintony&display=swap"
