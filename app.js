@@ -14,6 +14,13 @@ var arrNorAm = ["LASA-sky","LAX-sky","ORLB-sky","NYCA-sky","CHIA-sky","WASA-sky"
 var arrSouAm = ["BUEA-sky","CUZ-sky","RIOA-sky","MDZ-sky","BRC-sky","CTG-sky","SCL-sky","VI-sky","BOG-sky"];
 var arrKeys = [];
 
+var outBound = "2019-11-01";
+// $("#outBound").val();
+var fromLoc = "CHIA-sky";
+var toLoc = "Africa";
+// $("#toLoc").val();
+var inBound = "2019-12-01";
+ // $("#inBound").val();
 
 $(document).ready(function() {
   // create unique session ID to pull flight data
@@ -110,14 +117,14 @@ function showSecThree(){
 }
 function showSecFour(){
   document.getElementById("section3").style.display="none";
-  document.getElementById("section4").style.display="none";
+  document.getElementById("section4").style.display="block";
 }
 
   $("#section1_btn").on("click", function(event) {
     event.preventDefault();
-    var outBound = "2019-11-01";
+    outBound = "2019-11-01";
     // $("#outBound").val();
-    var fromLoc = "CHIA-sky";
+    fromLoc = "CHIA-sky";
     // $("#fromLoc").val();
     if (fromLoc == "" || outBound == "") {
       alert("Please Answer All Inputs");
@@ -127,57 +134,54 @@ function showSecFour(){
   });
   $("#text_value").on("click", function(event) {
     event.preventDefault();
-    var toLoc = "Africa";
+    toLoc = "Africa";
     // $("#toLoc").val();
-    var inBound = "2019-12-01";
+    inBound = "2019-12-01";
     // $("#inBound").val();
-    if (toLoc == "" || outBound == "") {
-      alert("Please Answer All Inputs");
-    } else{
-      showSecFour();
-    }
-  });
-
-  $("#text_value").on("click", function(event) {
-    event.preventDefault();
-    var toLoc = "Africa";
-    // $("#toLoc").val();
-    var inBound = "2019-12-01";
-    // $("#inBound").val();
-    
     if (toLoc == "" || outBound == "") {
       alert("Please Answer All Inputs");
     } else if(toLoc="Africa"){
       for (var i = 0; i < arrAfri.length; i++){
+        showSecFour();
         createSession(outBound, inBound, arrAfri[i], fromLoc,i);
         move();
+      }
+    }
+  });
+    
+  //   if (toLoc == "" || outBound == "") {
+  //     alert("Please Answer All Inputs");
+  //   } else if(toLoc="Africa"){
+  //     for (var i = 0; i < arrAfri.length; i++){
+  //       createSession(outBound, inBound, arrAfri[i], fromLoc,i);
+  //       move();
 
-      }
-    }else if(toLoc="Asia"){
-        for (var i = 0; i < arrAsia.length; i++){
-          createSession(outBound, inBound, arrAsia[i], fromLoc);
-        }
-        pullFlightData(arrKeys);
-    }else if(toLoc="Europe"){
-      for (var i = 0; i < arrEuro.length; i++){
-        createSession(outBound, inBound, arrEuro[i], fromLoc);
-      }
-      pullFlightData(arrKeys);
-    }else if(toLoc="North America"){
-      for (var i = 0; i < arrNorAm.length; i++){
-        createSession(outBound, inBound, arrNorAm[i], fromLoc);
-      }
-      pullFlightData(arrKeys);
-    }else if(toLoc="South America"){
-      for (var i = 0; i < arrSouAm.length; i++){
-        createSession(outBound, inBound, arrSouAm[i], fromLoc);
-      }
-      pullFlightData(arrKeys);
-    }
-  });
-  $("#text_reset").on("click", function(event) {
-    for (var i = 0; i < arrAfri.length; i++){
-      pullFlightData(arrKeys[i]);
-    }
-  });
+  //     }
+  //   }else if(toLoc="Asia"){
+  //       for (var i = 0; i < arrAsia.length; i++){
+  //         createSession(outBound, inBound, arrAsia[i], fromLoc);
+  //       }
+  //       pullFlightData(arrKeys);
+  //   }else if(toLoc="Europe"){
+  //     for (var i = 0; i < arrEuro.length; i++){
+  //       createSession(outBound, inBound, arrEuro[i], fromLoc);
+  //     }
+  //     pullFlightData(arrKeys);
+  //   }else if(toLoc="North America"){
+  //     for (var i = 0; i < arrNorAm.length; i++){
+  //       createSession(outBound, inBound, arrNorAm[i], fromLoc);
+  //     }
+  //     pullFlightData(arrKeys);
+  //   }else if(toLoc="South America"){
+  //     for (var i = 0; i < arrSouAm.length; i++){
+  //       createSession(outBound, inBound, arrSouAm[i], fromLoc);
+  //     }
+  //     pullFlightData(arrKeys);
+  //   }
+  // });
+  // $("#text_reset").on("click", function(event) {
+  //   for (var i = 0; i < arrAfri.length; i++){
+  //     pullFlightData(arrKeys[i]);
+  //   }
+  // });
 });
