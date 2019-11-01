@@ -23,8 +23,11 @@
       
       <div class="row justify-content-center">
         <div id="section1">
+          <!---departure info-->
           <div class="question">Where do you want to go?</div>
-          <p>Departure City:
+          <div>
+            <!---departure city-->
+            <div class="text">Departure City:</div>
             <div class="custom-select">
                 <select>
                   <option class="value0" value="0">Pick a Continent:</option>
@@ -34,7 +37,13 @@
                   <option value="4">North America</option>
                   <option value="5">South America</option>
                 </select>
-              </div>Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button">Fly, you fools!<button></a></p>
+                <!---departure date-->
+                <div class="text">Departure Date:</div>            
+              <label for="flightdate"><input type="date" name="dateofbirth" id="dateofbirth"></label>
+              
+              <a href="#section2"><button class="button">Fly, you fools!<button></a>
+              </div>
+              </div>
             </div>
             
         <div id="section2">
@@ -43,9 +52,9 @@
             <button class="button"><a href="#section3">Yes</a></button><button class="button"><a href="#section3">No</button></a></p>
         </div>
 
-
+<!---destination info-->
         <div id="section3">
-            Destination Continent:
+            <div class="text">Destination Continent:</div>
             <div class="custom-select">
                 <select>
                   <option class="value0" value="0">Pick a Continent:</option>
@@ -55,9 +64,9 @@
                   <option value="4">North America</option>
                   <option value="5">South America</option>
                 </select>
-            Return Date:
-            <label for="flightdate">Date</label>
-            <input type="date" name="dateofbirth" id="dateofbirth">
+                <div class="text">Return Date:</div>
+            <label for="flightdate"><input type="date" name="dateofbirth" id="dateofbirth"></label>
+            
         
         <input
           type="button"
@@ -75,8 +84,7 @@
       </div>
       <!-- include style="display: none" in div to remove container when all inputs are not complete -->
       <div id="flightInfo" class="container">
-        <div id="myProgress" style="display: none">
-          <div id="myBar"></div>
+          <div id="myProgress"class="lds-spinner" style="display: none; justify-content: center;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
         <div id="fltOps" style="display: none">
           <!-- Country -->
