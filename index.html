@@ -12,7 +12,6 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./main.css" />
-
   </head>
   <nav>
     <h1 class="headline">SkySwipe</h1>
@@ -21,7 +20,6 @@
     <div>
       <script src="./app.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-      
       <div class="row justify-content-center">
         <div id="section1"  style="display: block">
           <div class="question">Where do you want to go?</div>
@@ -35,7 +33,10 @@
                   <option value="4">North America</option>
                   <option value="5">South America</option>
                 </select>
-              </div>Departure Date: <input type="text" id="outBound" name="fromDate" value="" class="inputtext"/><a href="#section2"><button class="button" id="section1_btn">Fly, you fools!<button></a></p>
+                <div class="text">Departure Date:</div>            
+                <label for="flightdate"><input type="date" name="dateofbirth" id="dateofbirth"></label>
+                <a href="#section2"><button class="button" id="section1_btn">Fly, you fools!<button></a>
+                </div>
         </div>
         <div id="section3" style="display: none">
             Destination Continent:
@@ -51,16 +52,13 @@
             Return Date:
             <label for="flightdate">Date</label>
             <input type="date" name="dateofbirth" id="dateofbirth">
-        
             <input type="button" id="text_value" value="Get Value" class="inputtext"/>
             <input type="button" id="text_reset" value=" Reset " class="inputtext"/>
           </div>
         </div>
           <div id="section4" style="display: none">
             <div id="flightInfo" class="container">
-              <div id="myProgress" style="display: none">
-                <div id="myBar"></div>
-              </div>
+                <div id="myProgress"class="lds-spinner" style="display: none"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 <div id="fltOps" style="display: none">
                 <!-- Country -->
                 <div id="country">COUNTRY</div>
