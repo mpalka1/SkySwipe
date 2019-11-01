@@ -63,14 +63,10 @@ var arrSouAm = [
   "BOG-sky"
 ];
 var arrKeys = [];
-
-var outBound = "2019-11-01";
-// $("#outBound").val();
-var fromLoc = "CHIA-sky";
-var toLoc = "Africa";
-// $("#toLoc").val();
-var inBound = "2019-12-01";
-// $("#inBound").val();
+var outBound = "";
+var fromLoc = "";
+var toLoc = "";
+var inBound = "";
 
 $(document).ready(function() {
   // swipe functionality //
@@ -282,28 +278,27 @@ $(document).ready(function() {
   // create unique session ID to pull flight data
   function createSession(outbound, inbound, tolocation, fromlocation, index) {
     var settings = {
-      async: true,
-      crossDomain: true,
-      url:
-        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0",
-      method: "POST",
-      headers: {
-        "x-rapidapi-host":
-          "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+      "async": true,
+      "crossDomain": true,
+      "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0",
+      "method": "POST",
+      "headers": {
+        "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
         "x-rapidapi-key": "2abdcd6419msh8f3bf70becc33fdp1c08cfjsn573940caba1d",
         "content-type": "application/x-www-form-urlencoded"
       },
-      data: {
-        inboundDate: inbound,
-        children: "0",
-        infants: "0",
-        country: "US",
-        currency: "USD",
-        locale: "en-US",
-        originPlace: fromlocation,
-        destinationPlace: tolocation,
-        outboundDate: outbound,
-        adults: "1"
+      "data": {
+        "inboundDate": inbound,
+        "cabinClass": "business",
+        "children": "0",
+        "infants": "0",
+        "country": "US",
+        "currency": "USD",
+        "locale": "en-US",
+        "originPlace": fromlocation,
+        "destinationPlace": tolocation,
+        "outboundDate": outbound,
+        "adults": "1"
       }
     };
     $.ajax(settings).then(function(data, status, xhr) {
@@ -333,43 +328,12 @@ $(document).ready(function() {
       console.log(arrKeys);
     });
   }
-  // creates the html connection for the flights to display
-  function renderChoices(index) {
-    flightDiv.innerHTML = "";
-    for (i = 0; i < questions[index].choices.length; i++) {
-      var choiceBtn = document.createElement("button");
-      choiceBtn.textContent = questions[index].choices[i];
-      choicesDiv.appendChild(choiceBtn);
-    }
-  }
-  function move() {
-    document.getElementById("myProgress").style.display = "block";
-    var i = 0;
-    if (i == 0) {
-      i = 1;
-      var elem = document.getElementById("myBar");
-      var width = 1;
-      var id = setInterval(frame, 30);
-      function frame() {
-        if (width >= 100) {
-          clearInterval(id);
-          i = 0;
-        } else {
-          width++;
-          elem.style.width = width + "%";
-        }
-      }
-      setTimeout(function() {
-        document.getElementById("myProgress").style.display = "none";
-        document.getElementById("fltOps").style.display = "block";
-      }, 3000);
-    }
-  }
-
+  // Switches to Three screen
   function showSecThree() {
     document.getElementById("section1").style.display = "none";
     document.getElementById("section3").style.display = "block";
   }
+  // Switches to Fourth screen
   function showSecFour() {
     document.getElementById("section3").style.display = "none";
     document.getElementById("section4").style.display = "block";
@@ -377,10 +341,11 @@ $(document).ready(function() {
 
   $("#section1_btn").on("click", function(event) {
     event.preventDefault();
-    outBound = "2019-11-01";
-    // $("#outBound").val();
-    fromLoc = "CHIA-sky";
-    // $("#fromLoc").val();
+    outBound = $("#dateofbirth").val();
+    console.log(outBound);
+    fromLoc = $("#outBound").val();
+    console.log(fromLoc);
+
     if (fromLoc == "" || outBound == "") {
       alert("Please Answer All Inputs");
     } else {
@@ -389,17 +354,36 @@ $(document).ready(function() {
   });
   $("#text_value").on("click", function(event) {
     event.preventDefault();
-    toLoc = "Africa";
-    // $("#toLoc").val();
-    inBound = "2019-12-01";
-    // $("#inBound").val();
-    if (toLoc == "" || outBound == "") {
+    toLoc = $("#inBound").val();
+    console.log(toLoc);
+    inBound = $("#dateofbirthtwo").val();
+    console.log(inBound);
+    if (toLoc == 0 || outBound == "") {
       alert("Please Answer All Inputs");
     } else if ((toLoc = "Africa")) {
       for (var i = 0; i < arrAfri.length; i++) {
         showSecFour();
         createSession(outBound, inBound, arrAfri[i], fromLoc, i);
-        move();
+      }
+    } else if ((toLoc = "Asia")) {
+        for (var i = 0; i < arrAsia.length; i++) {
+          showSecFour();
+          createSession(outBound, inBound, arrAsia[i], fromLoc, i);
+        }
+    } else if ((toLoc = "Europe")) {
+      for (var i = 0; i < arrEuro.length; i++) {
+        showSecFour();
+        createSession(outBound, inBound, arrEuro[i], fromLoc, i);
+        }
+    } else if ((toLoc = "North America")) {
+      for (var i = 0; i < arrNorAm.length; i++) {
+        showSecFour();
+        createSession(outBound, inBound, arrNorAm[i], fromLoc, i);
+        }
+    } else if ((toLoc = "South America")) {
+      for (var i = 0; i < arrSouAm.length; i++) {
+        showSecFour();
+        createSession(outBound, inBound, arrSouAm[i], fromLoc, i);
       }
     }
   });

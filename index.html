@@ -25,13 +25,13 @@
           <div class="question">Where do you want to go?</div>
           <p>Departure City:
             <div class="custom-select">
-                <select>
-                  <option class="value0" value="0">Pick a Continent:</option>
-                  <option value="1">Africa</option>
-                  <option value="2">Asia</option>
-                  <option value="3">Europe</option>
-                  <option value="4">North America</option>
-                  <option value="5">South America</option>
+                <select id="outBound">
+                  <option class="value0" value="0" >Pick a Continent:</option>
+                  <option value="ATLA-sky">Atlanta</option>
+                  <option value="CHIA-sky">Chicago</option>
+                  <option value="BOS-sky">Boston</option>
+                  <option value="NYCA-sky">Ney York</option>
+                  <option value="LAX-sky">Las Angeles</option>
                 </select>
                 <div class="text">Departure Date:</div>            
                 <label for="flightdate"><input type="date" name="dateofbirth" id="dateofbirth"></label>
@@ -41,25 +41,25 @@
         <div id="section3" style="display: none">
             Destination Continent:
             <div class="custom-select">
-                <select>
+                <select id="inBound">
                   <option class="value0" value="0">Pick a Continent:</option>
-                  <option value="1">Africa</option>
-                  <option value="2">Asia</option>
-                  <option value="3">Europe</option>
-                  <option value="4">North America</option>
-                  <option value="5">South America</option>
+                  <option value="Africa">Africa</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="North America">North America</option>
+                  <option value="South America">South America</option>
                 </select>
             Return Date:
             <label for="flightdate">Date</label>
-            <input type="date" name="dateofbirth" id="dateofbirth">
+            <input type="date" name="dateofbirth" id="dateofbirthtwo">
             <input type="button" id="text_value" value="Get Value" class="inputtext"/>
             <input type="button" id="text_reset" value=" Reset " class="inputtext"/>
           </div>
         </div>
-          <div id="section4" style="display: none">
+        <div id="section4" style="display: none">
             <div id="flightInfo" class="container">
                 <div id="myProgress"class="lds-spinner" style="display: none"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                <div id="fltOps" style="display: none">
+                <!-- <div id="fltOps" style="display: none"> -->
                 <!-- Country -->
                 <div id="country">COUNTRY</div>
                 <!-- Flight/Prices -->
@@ -67,11 +67,12 @@
                 <!-- section for result swiping -->
                   <div class="card" id="board"></div>
                     <!-- next question -->
+                  <div id="data">sadflkjsadfksdjgf</div>
                     <button id="likeBtn">Like</button>
                     <button id="dislikeBtn">Dislike</button>
                 </div>
               </div>
-          </div>
+        </div>
         </div>
         </div>
       <!-- include style="display: none" in div to remove container when all inputs are not complete -->
