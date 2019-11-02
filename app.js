@@ -333,6 +333,9 @@ let carousel = new Carousel(board);
       setTimeout(function(){console.log(arrKeys); arrKeys.push(response); console.log(arrKeys);},15000);
      });
   }
+  function showReset() {
+    window.location.reload(false);
+  }
   // Switches to Three screen
   function showSecThree() {
     document.getElementById("section1").style.display = "none";
@@ -362,7 +365,7 @@ let carousel = new Carousel(board);
       movieTr.append(posterTd);
 
       return movieTr;
-    }
+  }
 
 
   $("#section1_btn").on("click", function(event) {
@@ -412,5 +415,9 @@ let carousel = new Carousel(board);
         createSession(outBound, inBound, arrSouAm[i], fromLoc, i);
       }
     }
+  });
+  $("#text_reset").on("click", function(event) {
+    event.preventDefault();
+    showReset(); 
   });
 });

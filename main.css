@@ -9,7 +9,9 @@
   padding: 12px;
   color: white;
 }
-
+.destLoc{
+  position: relative;
+}
 .custom-select {
   position: relative;
   font-family: "Sintony", sans-serif;
@@ -33,7 +35,9 @@ html {
 .question {
   font-size: 24px;
 }
-
+.text{
+  color: #fff;
+}
 #section1 {
   height: 200px;
 }
