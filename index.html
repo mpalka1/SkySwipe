@@ -23,6 +23,8 @@
       <div class="row justify-content-center">
         <div id="section1"  style="display: block">
           <div class="question">Where does your journey begin?</div>
+          <br>
+          <br>
           <p>Departure City:
             <div class="custom-select">
                 <select id="outBound">
@@ -33,13 +35,15 @@
                   <option value="NYCA-sky">Ney York</option>
                   <option value="LAX-sky">Las Angeles</option>
                 </select>
+                <br>
+                <br>
                 <div class="text">Departure Date:</div>            
                 <label for="flightdate"><input type="date" name="dateofbirth" id="dateofbirth"></label>
                 <a href="#section2"><button class="button" id="section1_btn">Fly, you fools!<button></a>
                 </div>
         </div>
         <div id="section3" style="display: none">
-            Destination Continent:
+            <div id="destLoc">Destination Continent:</div>
             <div class="custom-select">
                 <select id="inBound">
                   <option class="value0" value="0">Pick a Continent:</option>
@@ -49,11 +53,14 @@
                   <option value="North America">North America</option>
                   <option value="South America">South America</option>
                 </select>
-            Return Date:
-            <label for="flightdate">Date</label>
+            <br>
+            <br>
+            <div class="text">Return Date:</div>
+            <label for="flightdate"></label>
             <input type="date" name="dateofbirth" id="dateofbirthtwo">
-            <input type="button" id="text_value" value="Get Value" class="inputtext"/>
-            <input type="button" id="text_reset" value=" Reset " class="inputtext"/>
+            <br>
+            <input type="button" id="text_value" value="Get Swiping" class="inputtext"/>
+            <input type="button" id="text_reset" value=" I Changed My Mind " class="inputtext"/>
           </div>
         </div>
         <div id="section4" style="display: none">
