@@ -22,11 +22,11 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
       <div class="row justify-content-center">
         <div id="section1"  style="display: block">
-          <div class="question">Where do you want to go?</div>
+          <div class="question">Where does your journey begin?</div>
           <p>Departure City:
             <div class="custom-select">
                 <select id="outBound">
-                  <option class="value0" value="0" >Pick a Continent:</option>
+                  <option class="value0" value="0" >Pick your hometown:</option>
                   <option value="ATLA-sky">Atlanta</option>
                   <option value="CHIA-sky">Chicago</option>
                   <option value="BOS-sky">Boston</option>
@@ -57,24 +57,37 @@
           </div>
         </div>
         <div id="section4" style="display: none">
-            <div id="flightInfo" class="container">
-                <div id="myProgress"class="lds-spinner" style="display: none"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                <!-- <div id="fltOps" style="display: none"> -->
-                <!-- Country -->
-                <div id="country">COUNTRY</div>
-                <!-- Flight/Prices -->
-                <div id="flightoptions">OPTIONS</div>
-                <!-- section for result swiping -->
-                  <div class="card" id="board"></div>
-                    <!-- next question -->
-                  <div id="data">sadflkjsadfksdjgf</div>
-                    <button id="likeBtn">Like</button>
-                    <button id="dislikeBtn">Dislike</button>
-                </div>
-              </div>
+          <div id="myProgress"class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
+        <div id="section5" style="display: none">    
+          <div id="flightInfo" class="container"> 
+            <!-- <div id="fltOps" style="display: none"> -->
+            <!-- section for result swiping -->
+            <div class="card" id="board"></div>
+            <!-- Country/Flight/Prices -->
+            <div id="data">
+              <table class="table">
+              <thead>
+                <tr>
+                  <!-- Name Columns -->
+                  <th scope="col">Likes</th>
+                  <th scope="col">Dislikes</th>
+                </tr>
+                <tr>
+                    <!-- Name Columns -->
+                    <th scope="col" id="likes">0</th>
+                    <th scope="col" id="dislikes">0</th>
+                  </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- Insert additional movie rows here -->
+              </tbody>
+            </table></div>
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
+    </div>
       <!-- include style="display: none" in div to remove container when all inputs are not complete -->
     </div>
     <link
